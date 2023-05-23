@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  app:
+    container_name: app
+    build:
+      context: .
+      target: dev
+    working_dir: /app
+    entrypoint: "./entrypoint.sh"
+    volumes:
+      - .:/app
+      - rubygems:/usr/local/bundle
+      - gemconfig:/root/.local/share/gem
+      - yarn_cache:/usr/local/share/.cache/yarn/v6
+      - npm_cache:/root/.npm
+    ports:
+      - "3000:3000"
+
+volumes:
+  rubygems:
+  gemconfig:
+  yarn_cache:
+  npm_cache:

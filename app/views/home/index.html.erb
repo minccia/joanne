@@ -1,0 +1,10 @@
+<article>
+  <h1> This text remains. </h1>
+
+  <turbo-frame id="welcome_message">
+    <h2> <%= @welcome_message %> </h2>
+    <div class="click-me">
+      <%= link_to 'Click to change the text', turbo_frame_test_path %>
+    </div>
+  </turbo-frame>
+</article>

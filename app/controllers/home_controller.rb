@@ -3,6 +3,5 @@ class HomeController < ApplicationController
     @welcome_message = 'Hello, i\'m a dynamic text.'
   end
 
-  def turbo_frame_test
-  end
+  def turbo_frame_test; end
 end

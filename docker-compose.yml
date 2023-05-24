@@ -1,6 +1,17 @@
 version: '3.9'
 
 services:
+  postgres:
+    container_name: postgres
+    image: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+     - POSTGRES_HOST_AUTH_METHOD=trust
+    command: postgres
+    ports:
+      - "5432:5432"
+
   app:
     container_name: app
     build:
@@ -10,15 +21,19 @@ services:
     entrypoint: "./entrypoint.sh"
     volumes:
       - .:/app
-      - rubygems:/usr/local/bundle
-      - gemconfig:/root/.local/share/gem
+      - ruby_gems:/usr/local/bundle
+      - gem_config:/root/.local/share/gem
       - yarn_cache:/usr/local/share/.cache/yarn/v6
       - npm_cache:/root/.npm
     ports:
       - "3000:3000"
+    command: bash -c "bin/setup && rails s -p '3000' -b '0.0.0.0'"
+    depends_on:
+      - postgres
 
 volumes:
-  rubygems:
-  gemconfig:
+  postgres_data:
+  ruby_gems:
+  gem_config:
   yarn_cache:
   npm_cache:

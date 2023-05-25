@@ -1,0 +1,47 @@
+AllCops:
+  TargetRubyVersion: 3.2
+  NewCops: enable
+  Exclude:
+    - 'bin/*'
+    - 'spec/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'Gemfile'
+
+Metrics/AbcSize:
+  Max: 18
+
+Metrics/BlockLength:
+  Max: 60
+  AllowedMethods: ['describe', 'context', 'it']
+
+Metrics/CyclomaticComplexity:
+  Max: 9
+
+Metrics/MethodLength:
+  Max: 18
+
+Metrics/PerceivedComplexity:
+  Max: 9
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/SpecialGlobalVars:
+  EnforcedStyle: use_perl_names
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/SymbolArray:
+  EnforcedStyle: percent
+  MinSize: 10
+
+Style/Documentation:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 198

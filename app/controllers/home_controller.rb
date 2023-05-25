@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  def index 
+  def index
     @welcome_message = 'Hello, i\'m a dynamic text.'
   end
 

@@ -24,6 +24,7 @@ group :test do
 end
 
 group :development do
+  gem 'brakeman', require: false
   gem 'rubocop', require: false
 end
 

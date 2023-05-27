@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'support/factory_bot.rb'
+require 'support/devise.rb'
 
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'

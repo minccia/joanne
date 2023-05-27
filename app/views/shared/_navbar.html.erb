@@ -1,0 +1,18 @@
+<nav data-turbo="false">
+  <section>
+    <% if user_signed_in? %>
+      <span> 
+        <%= button_to t('sign_out_button'),
+           destroy_user_session_path,
+           method: :delete %>
+      </span>
+    <% else %>
+      <span>
+        <%= link_to t('sign_in_button'), new_user_session_path %> 
+      </span>
+      <span> 
+        <%= link_to t('sign_up_button'), new_user_registration_path %> 
+      </span>
+    <% end %>
+  <ul>
+</nav>
